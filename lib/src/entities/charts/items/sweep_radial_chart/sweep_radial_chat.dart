@@ -10,13 +10,12 @@ class SweepRadialChart extends StatelessWidget {
   final double knobDiameter;
 
   const SweepRadialChart({
-    Key? key,
+    super.key,
     required this.value,
     this.thickness = 30,
     this.knobDiameter = 45,
-  })  : assert(value <= 1 && value >= 0,
-            'value must be normalized between 0 and 1'),
-        super(key: key);
+  }) : assert(value <= 1 && value >= 0,
+            'value must be normalized between 0 and 1');
 
   @override
   Widget build(BuildContext context) {

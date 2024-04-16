@@ -19,12 +19,12 @@ class BarGraph extends StatefulWidget {
   final Point<double> maxPoint;
 
   const BarGraph({
-    Key? key,
+    super.key,
     required this.verticalTexts,
     required this.horizontalTexts,
     required this.values,
     required this.maxPoint,
-  }) : super(key: key);
+  });
 
   @override
   State<BarGraph> createState() => _BarGraphState();

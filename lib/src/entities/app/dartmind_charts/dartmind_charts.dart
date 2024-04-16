@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DartmindCharts extends StatelessWidget {
-  const DartmindCharts({Key? key}) : super(key: key);
+  const DartmindCharts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class PortfolioAppWrapper extends StatelessWidget {
   final Widget child;
 
   const PortfolioAppWrapper({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

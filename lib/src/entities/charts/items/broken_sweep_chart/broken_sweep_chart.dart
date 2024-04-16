@@ -25,13 +25,13 @@ class BrokenSweepChart extends StatefulWidget {
   final double knobValue;
 
   const BrokenSweepChart({
-    Key? key,
+    super.key,
     this.size,
     required this.knobValue,
     required this.sweepPortionSizes,
     this.portionGap = 0.06,
     this.thickness = 15,
-  }) : super(key: key);
+  });
 
   @override
   State<BrokenSweepChart> createState() => _BrokenSweepChartState();
@@ -98,11 +98,11 @@ class SlidingKnob extends StatefulWidget {
   final double value;
 
   const SlidingKnob({
-    Key? key,
+    super.key,
     required this.parentSize,
     required this.diameter,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   State<SlidingKnob> createState() => _SlidingKnobState();
@@ -156,9 +156,9 @@ class Knob extends StatelessWidget {
   final double diameter;
 
   const Knob({
-    Key? key,
+    super.key,
     required this.diameter,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

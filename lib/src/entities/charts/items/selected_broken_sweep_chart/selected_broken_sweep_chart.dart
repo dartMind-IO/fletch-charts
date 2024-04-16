@@ -15,12 +15,12 @@ class SelectedBrokenSweepChart extends StatelessWidget {
   final double gap;
 
   const SelectedBrokenSweepChart({
-    Key? key,
+    super.key,
     required this.selectedValue,
     this.sweepAngle = 180,
     this.thickness = 15,
     this.gap = 0.06,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

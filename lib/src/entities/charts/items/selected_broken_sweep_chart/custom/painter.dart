@@ -65,7 +65,6 @@ class BrokenSweepChartPainter extends CustomPainter {
     );
 
     for (int index = 0; index < paths.length; index++) {
-      print('selected index: $selectedIndex');
       canvas.drawPath(
         paths[index],
         index == selectedIndex ? selectedPaint : paint,

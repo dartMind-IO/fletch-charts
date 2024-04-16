@@ -13,8 +13,8 @@ class QuickPainterWidget extends StatelessWidget {
     required this.callback,
     this.shouldRepaint = false,
     this.child,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

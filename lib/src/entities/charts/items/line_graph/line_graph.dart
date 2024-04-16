@@ -19,11 +19,11 @@ class LineGraph extends StatelessWidget {
   final Map<double, double> values;
 
   const LineGraph({
-    Key? key,
+    super.key,
     required this.verticalTexts,
     required this.horizontalTexts,
     required this.values,
-  }) : super(key: key);
+  });
 
   void showOverlay(
     BuildContext context,

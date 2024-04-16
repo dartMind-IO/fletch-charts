@@ -1,15 +1,10 @@
-import 'dart:math';
-
-import 'package:fletch_charts/src/entities/charts/items/bar_graph/bar_graph.dart';
-import 'package:fletch_charts/src/entities/charts/items/broken_sweep_chart/broken_sweep_chart.dart';
 import 'package:fletch_charts/src/entities/charts/items/line_graph/line_graph.dart';
-import 'package:fletch_charts/src/entities/charts/items/selected_broken_sweep_chart/selected_broken_sweep_chart.dart';
 import 'package:flutter/material.dart';
 
 part 'data/chart_data.dart';
 
 class ChartsScreen extends StatelessWidget {
-  const ChartsScreen({Key? key}) : super(key: key);
+  const ChartsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

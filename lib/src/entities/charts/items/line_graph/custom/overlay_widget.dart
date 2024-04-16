@@ -6,11 +6,11 @@ class ChartOverlayWidget extends StatelessWidget {
   final VoidCallback closeCallback;
 
   const ChartOverlayWidget({
-    Key? key,
+    super.key,
     required this.pointData,
     required this.globalBulbPosition,
     required this.closeCallback,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +55,10 @@ class ToolTip extends StatelessWidget {
   final Color color;
 
   const ToolTip({
-    Key? key,
+    super.key,
     required this.child,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
