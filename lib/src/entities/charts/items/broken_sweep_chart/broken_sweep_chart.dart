@@ -32,7 +32,7 @@ class BrokenSweepChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size painterSize = size ?? Size(416, 213.27.doubled);
+    final Size painterSize = size ?? Size(340, 181.doubled);
     return LayoutBuilder(builder: (context, constraints) {
       return Padding(
         padding: EdgeInsets.all(thickness),
