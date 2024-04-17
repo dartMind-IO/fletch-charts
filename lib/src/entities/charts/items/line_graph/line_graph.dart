@@ -54,18 +54,19 @@ class LineGraph extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox.fromSize(
-            size: size,
+            // size: size,
             child: Stack(
               alignment: Alignment.centerLeft,
               children: [
-                SizedBox(
-                  height: size.height,
-                  width: size.width,
-                  child: CustomPaint(
-                    size: size,
-                    painter: BackgroundPainter(verticalTexts: verticalTexts),
-                  ),
+                // SizedBox(
+                //   height: size.height,
+                //   width: size.width,
+                // child:
+                CustomPaint(
+                  size: size,
+                  painter: BackgroundPainter(verticalTexts: verticalTexts),
                 ),
+                // ),
                 Builder(builder: (context) {
                   final graphSize = Size(
                     size.width - 15.w,
