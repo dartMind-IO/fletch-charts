@@ -39,26 +39,23 @@ class BrokenSweepChart extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            SizedBox.fromSize(
-              size: painterSize,
-              child: Transform(
-                alignment: Alignment
-                    .center, // Adjust this to change the origin of the flip
-                transform: Matrix4.identity()
-                  ..rotateX(math.pi) // pi radians is 180 degrees
-                  ..rotateY(math.pi),
-                child: CustomPaint(
+            Transform(
+              alignment: Alignment
+                  .center, // Adjust this to change the origin of the flip
+              transform: Matrix4.identity()
+                ..rotateX(math.pi) // pi radians is 180 degrees
+                ..rotateY(math.pi),
+              child: CustomPaint(
+                size: painterSize,
+                painter: BrokenSweepChartPainter(
+                  thickness: thickness,
+                  sweepPortionSizes: sweepPortionSizes,
+                  gap: portionGap,
                   size: painterSize,
-                  painter: BrokenSweepChartPainter(
-                    thickness: thickness,
-                    sweepPortionSizes: sweepPortionSizes,
-                    gap: portionGap,
-                    size: painterSize,
-                    gradientColors: [
-                      AppColors.gradient2,
-                      AppColors.gradient1,
-                    ],
-                  ),
+                  gradientColors: [
+                    AppColors.gradient2,
+                    AppColors.gradient1,
+                  ],
                 ),
               ),
             ),
