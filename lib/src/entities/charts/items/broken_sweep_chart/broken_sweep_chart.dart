@@ -62,11 +62,11 @@ class BrokenSweepChart extends StatelessWidget {
                 ),
               ),
             ),
-            SlidingKnob(
-              value: 1,
-              diameter: 45.l,
-              parentSize: painterSize,
-            ),
+            // SlidingKnob(
+            //   value: 1,
+            //   diameter: 45.l,
+            //   parentSize: painterSize,
+            // ),
           ],
         ),
       );
