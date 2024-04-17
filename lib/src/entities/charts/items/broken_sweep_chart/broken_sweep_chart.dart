@@ -32,7 +32,7 @@ class BrokenSweepChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size painterSize = size ?? Size(340, 181.doubled);
+    final Size painterSize = size ?? const Size(340, 181);
     return LayoutBuilder(builder: (context, constraints) {
       return Padding(
         padding: EdgeInsets.all(thickness),
@@ -62,11 +62,11 @@ class BrokenSweepChart extends StatelessWidget {
                 ),
               ),
             ),
-            // SlidingKnob(
-            //   value: 1,
-            //   diameter: 45.l,
-            //   parentSize: painterSize,
-            // ),
+            SlidingKnob(
+              value: 1,
+              diameter: 45.l,
+              parentSize: painterSize,
+            ),
           ],
         ),
       );
