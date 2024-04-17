@@ -49,24 +49,23 @@ class LineGraph extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Size(818, 302.doubled.halfed);
     return SizedBox(
-      // width: size.width,
+      width: size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox.fromSize(
-            // size: size,
+            size: size,
             child: Stack(
               alignment: Alignment.centerLeft,
               children: [
-                // SizedBox(
-                //   height: size.height,
-                //   width: size.width,
-                // child:
-                CustomPaint(
-                  size: size,
-                  painter: BackgroundPainter(verticalTexts: verticalTexts),
+                SizedBox(
+                  height: size.height,
+                  width: size.width,
+                  child: CustomPaint(
+                    size: size,
+                    painter: BackgroundPainter(verticalTexts: verticalTexts),
+                  ),
                 ),
-                // ),
                 Builder(builder: (context) {
                   final graphSize = Size(
                     size.width - 15.w,
