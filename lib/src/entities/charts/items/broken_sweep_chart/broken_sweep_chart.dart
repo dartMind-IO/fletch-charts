@@ -41,9 +41,12 @@ class BrokenSweepChart extends StatelessWidget {
           children: [
             SizedBox.fromSize(
               size: painterSize,
-              child: Transform.flip(
-                flipY: true,
-                flipX: true,
+              child: Transform(
+                alignment: Alignment
+                    .center, // Adjust this to change the origin of the flip
+                transform: Matrix4.identity()
+                  ..rotateX(math.pi) // pi radians is 180 degrees
+                  ..rotateY(math.pi),
                 child: CustomPaint(
                   size: painterSize,
                   painter: BrokenSweepChartPainter(
