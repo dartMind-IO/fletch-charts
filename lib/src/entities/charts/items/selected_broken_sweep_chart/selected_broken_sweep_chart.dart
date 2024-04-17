@@ -26,35 +26,39 @@ class SelectedBrokenSweepChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size painterSize = Size(416, 213.27.doubled);
     return LayoutBuilder(builder: (context, constraints) {
-      return Stack(
-        clipBehavior: Clip.none,
-        children: [
-          Transform.rotate(
-            angle: sweepAngle == 180 ? 0 : -(sweepAngle - 180).halfed.toRadians,
-            child: SizedBox.fromSize(
-              size: painterSize,
-              child: Transform.flip(
-                flipY: true,
-                flipX: true,
-                child: CustomPaint(
-                  size: painterSize,
-                  painter: BrokenSweepChartPainter(
-                    sweepAngle: sweepAngle,
-                    thickness: thickness,
-                    selectedIndex: 0,
-                    sweepPortionSizes: [selectedValue, 1 - selectedValue],
-                    gap: gap,
+      return Padding(
+        padding: EdgeInsets.all(thickness),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Transform.rotate(
+              angle:
+                  sweepAngle == 180 ? 0 : -(sweepAngle - 180).halfed.toRadians,
+              child: SizedBox.fromSize(
+                size: painterSize,
+                child: Transform.flip(
+                  flipY: true,
+                  flipX: true,
+                  child: CustomPaint(
                     size: painterSize,
-                    gradientColors: [
-                      AppColors.gradient2,
-                      AppColors.gradient1,
-                    ],
+                    painter: BrokenSweepChartPainter(
+                      sweepAngle: sweepAngle,
+                      thickness: thickness,
+                      selectedIndex: 0,
+                      sweepPortionSizes: [selectedValue, 1 - selectedValue],
+                      gap: gap,
+                      size: painterSize,
+                      gradientColors: [
+                        AppColors.gradient2,
+                        AppColors.gradient1,
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       );
     });
   }
