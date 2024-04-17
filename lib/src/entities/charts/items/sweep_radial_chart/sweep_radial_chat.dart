@@ -21,34 +21,37 @@ class SweepRadialChart extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size painterSize = Size(416, 213.27.doubled);
     return LayoutBuilder(builder: (context, constraints) {
-      return Stack(
-        clipBehavior: Clip.none,
-        children: [
-          SizedBox.fromSize(
-            size: painterSize,
-            child: Transform.flip(
-              flipY: true,
-              flipX: true,
-              child: CustomPaint(
-                size: painterSize,
-                painter: SweepRadialGradientPainter(
-                  thickness: thickness,
-                  value: value,
+      return Padding(
+        padding: EdgeInsets.all(thickness),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            SizedBox.fromSize(
+              size: painterSize,
+              child: Transform.flip(
+                flipY: true,
+                flipX: true,
+                child: CustomPaint(
                   size: painterSize,
-                  gradientColors: [
-                    AppColors.gradient2,
-                    AppColors.gradient1,
-                  ],
+                  painter: SweepRadialGradientPainter(
+                    thickness: thickness,
+                    value: value,
+                    size: painterSize,
+                    gradientColors: [
+                      AppColors.gradient2,
+                      AppColors.gradient1,
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          SlidingKnob(
-            value: value,
-            diameter: knobDiameter,
-            parentSize: painterSize,
-          ),
-        ],
+            SlidingKnob(
+              value: value,
+              diameter: knobDiameter,
+              parentSize: painterSize,
+            ),
+          ],
+        ),
       );
     });
   }
