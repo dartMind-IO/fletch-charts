@@ -57,97 +57,100 @@ class _BarGraphState extends State<BarGraph> {
   Widget build(BuildContext context) {
     const Size size = Size(450, 170);
 
-    return Builder(builder: (context) {
-      final graphSize = Size(
-        size.width - 42,
-        size.height,
-      );
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          SizedBox(
-            height: size.height,
-            width: size.width,
-            child: Stack(
-              alignment: Alignment.centerRight,
-              children: [
-                SizedBox(
-                  height: size.height,
-                  width: size.width,
-                  child: CustomPaint(
-                    size: size,
-                    painter: _BackgroundPainter(
-                      verticalTexts: widget.verticalTexts,
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: graphSize.height,
-                  width: graphSize.width,
-                  child: CanvasTouchDetector(
-                    gesturesToOverride: const [GestureType.onTapDown],
-                    builder: (context) {
-                      return CustomPaint(
-                        painter: _BarGraphPainter(
-                          context,
-                          barWidth: 30.6.w,
-                          selectedIndex: selectedIndex,
-                          size: graphSize,
-                          maxPoint: widget.maxPoint,
-                          dispatchChange: (
-                            Offset gPosition,
-                            Point point,
-                            int index,
-                          ) {
-                            setState(() {
-                              selectedIndex = index;
-                            });
-                            showOverlay(context, point, gPosition);
-                          },
-                          points: [
-                            for (final item in widget.values.entries)
-                              Point(
-                                item.key.toDouble(),
-                                item.value.toDouble(),
-                              ),
-                          ],
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-          21.boxHeight,
-          SizedBox(
-            width: size.width,
-            child: Padding(
-              padding: EdgeInsets.only(left: 72.w),
-              child: Row(
-                children: widget.horizontalTexts.map((text) {
-                  return Padding(
-                    padding: EdgeInsets.only(
-                      left: widget.horizontalTexts.indexOf(text) == 0
-                          ? 0
-                          : (size.width / widget.horizontalTexts.length) - 14,
-                    ),
-                    child: Text(
-                      text,
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        height: 1.5,
-                        color: AppColors.paleBlue,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      child: Builder(builder: (context) {
+        final graphSize = Size(
+          size.width - 42,
+          size.height,
+        );
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            SizedBox(
+              height: size.height,
+              width: size.width,
+              child: Stack(
+                alignment: Alignment.centerRight,
+                children: [
+                  SizedBox(
+                    height: size.height,
+                    width: size.width,
+                    child: CustomPaint(
+                      size: size,
+                      painter: _BackgroundPainter(
+                        verticalTexts: widget.verticalTexts,
                       ),
                     ),
-                  );
-                }).toList(),
+                  ),
+                  SizedBox(
+                    height: graphSize.height,
+                    width: graphSize.width,
+                    child: CanvasTouchDetector(
+                      gesturesToOverride: const [GestureType.onTapDown],
+                      builder: (context) {
+                        return CustomPaint(
+                          painter: _BarGraphPainter(
+                            context,
+                            barWidth: 30.6.w,
+                            selectedIndex: selectedIndex,
+                            size: graphSize,
+                            maxPoint: widget.maxPoint,
+                            dispatchChange: (
+                              Offset gPosition,
+                              Point point,
+                              int index,
+                            ) {
+                              setState(() {
+                                selectedIndex = index;
+                              });
+                              showOverlay(context, point, gPosition);
+                            },
+                            points: [
+                              for (final item in widget.values.entries)
+                                Point(
+                                  item.key.toDouble(),
+                                  item.value.toDouble(),
+                                ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
-        ],
-      );
-    });
+            21.boxHeight,
+            SizedBox(
+              width: size.width,
+              child: Padding(
+                padding: EdgeInsets.only(left: 72.w),
+                child: Row(
+                  children: widget.horizontalTexts.map((text) {
+                    return Padding(
+                      padding: EdgeInsets.only(
+                        left: widget.horizontalTexts.indexOf(text) == 0
+                            ? 0
+                            : (size.width / widget.horizontalTexts.length) - 14,
+                      ),
+                      child: Text(
+                        text,
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          height: 1.5,
+                          color: AppColors.paleBlue,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ],
+        );
+      }),
+    );
   }
 }
