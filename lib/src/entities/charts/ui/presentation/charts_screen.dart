@@ -1,3 +1,4 @@
+import 'package:fletch_charts/fletch_charts.dart';
 import 'package:fletch_charts/src/entities/charts/items/line_graph/line_graph.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,9 @@ class ChartsScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // SweepRadialChart(
-            //   value: 0.4,
-            // ),
+            SweepRadialChart(
+              value: 0.4,
+            ),
 
             LineGraph(
               verticalTexts: ChartData.lineText,
