@@ -49,7 +49,7 @@ class LineGraph extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = Size(818, 302.doubled.halfed);
     return SizedBox(
-      width: size.width,
+      // width: size.width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
